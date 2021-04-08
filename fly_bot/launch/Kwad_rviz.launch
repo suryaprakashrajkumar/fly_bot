@@ -1,0 +1,24 @@
+<launch>
+	
+	<param name="robot_description" command="$(find xacro)xacro '$(find fly_bot)/urdf/Kwad.xacro'" />
+	
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+		<param name="use_gui" value="TRUE" />
+	</node>
+	
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find fly_bot)/urdf.rviz" required="false" />
+
+	<include file="$(find fly_bot)/launch/Kwad_gazebo.launch"/>
+
+	<!--<include file="$(find fly_bot)/launch/navigation.launch"/>-->
+
+	<include file="$(find fly_bot)/launch/octomap.launch"/>
+
+	<!--<node name="odom_pub" pkg="fly_bot" type="odom_pub.py"/>-->
+
+	<!--<node name="odom_pub" pkg="fly_bot" type="odom_gz.py"/>-->
+
+    <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan">
+      <param name="target_frame" type="string" value="camera_link"/>
+    </node>
+</launch>
