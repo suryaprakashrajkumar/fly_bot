@@ -10,7 +10,7 @@
 		<arg name="headless" default="false" />
 		<arg name="debug" default="false" />-->
 	</include>
-	
+	<node name="odom_pub" pkg="fly_bot" type="odom_modelstate.py"/>
 	<group ns="Kwad">
 		
 		<param name="robot_description" command="$(find xacro)xacro '$(find fly_bot)/urdf/Kwad.xacro'" />

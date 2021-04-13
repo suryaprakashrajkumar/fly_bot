@@ -241,6 +241,12 @@
 			<link_name>prop_back_left</link_name>
 			<control_joint>joint_back_left_prop</control_joint>
 		</plugin>
+		  <plugin name="ground_truth" filename="libgazebo_ros_p3d.so">
+    <frameName>base_link1</frameName>
+    <bodyName>base_link1</bodyName>
+    <topicName>/odom</topicName>
+    <updateRate>30.0</updateRate>
+  </plugin>
 	</gazebo>-->
 	
 	<!-- Load the gazebo_ros_control plugin -->
@@ -251,11 +257,5 @@
 		</plugin>
 	</gazebo>
   <gazebo>  
-  <plugin name="ground_truth" filename="libgazebo_ros_p3d.so">
-    <frameName>base_link1</frameName>
-    <bodyName>base_link1</bodyName>
-    <topicName>/odom</topicName>
-    <updateRate>30.0</updateRate>
-  </plugin>
 </gazebo>
 </robot>

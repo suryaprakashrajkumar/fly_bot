@@ -6,7 +6,7 @@ from gazebo_msgs.srv import GetModelState, GetModelStateRequest
 import rospy
 rospy.init_node('odom_pub_test')
 
-odom_pub=rospy.Publisher ('/test_odom', Odometry)
+odom_pub=rospy.Publisher ('/odom', Odometry)
 
 rospy.wait_for_service ('/gazebo/get_model_state')
 get_model_srv = rospy.ServiceProxy('/gazebo/get_model_state', GetModelState)

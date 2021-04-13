@@ -18,6 +18,5 @@ def control_kwad(msg):
 rospy.init_node('turtle_tf_broadcaster')
 
 br = tf.TransformBroadcaster()
-
 PoseSub = rospy.Subscriber('/gazebo/model_states', ModelStates,control_kwad)
 rospy.spin()
